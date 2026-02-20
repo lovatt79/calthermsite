@@ -858,9 +858,7 @@ h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
 
 /* ===== Service Detail Content ===== */
 .service-detail {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 48px;
+  max-width: 820px;
 }
 
 .service-detail h2 {
@@ -894,6 +892,19 @@ h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
   height: 8px;
   background: var(--primary);
   border-radius: 50%;
+}
+
+.service-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.service-bottom-grid .service-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
 
 .service-sidebar {
@@ -1315,12 +1326,8 @@ h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
     grid-template-columns: 1fr 1fr;
   }
 
-  .service-detail {
+  .service-bottom-grid .service-sidebar {
     grid-template-columns: 1fr;
-  }
-
-  .service-sidebar {
-    order: -1;
   }
 
   .project-card {
@@ -1388,19 +1395,16 @@ h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
     display: block;
   }
 
-  .top-bar .container {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .top-bar-phones {
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
+  .top-bar {
+    display: none;
   }
 
   .hero {
     padding: 60px 0;
+  }
+
+  .hero-stats {
+    display: none;
   }
 
   .section {
